@@ -23,6 +23,15 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-scss`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Raleway\:700`,
+          `Open Sans\:400,600,700` // you can also specify font weights and styles
+        ]
+      }
+    }
   ],
 }

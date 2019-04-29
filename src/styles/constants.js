@@ -10,5 +10,3 @@ export const COLORS = {
 export const GRADIENT = `linear-gradient(to top right, ${COLORS.babyBlue}, ${
   COLORS.blue
 })`
-
-export const BORDER_RADIUS = "10px"

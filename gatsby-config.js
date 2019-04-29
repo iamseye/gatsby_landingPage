@@ -32,6 +32,6 @@ module.exports = {
           `Open Sans\:400,600,700` // you can also specify font weights and styles
         ]
       }
-    }
+    },
   ],
 }

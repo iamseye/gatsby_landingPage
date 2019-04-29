@@ -1,0 +1,9 @@
+@import "_variables.scss";
+
+.intro-section {
+    background-image: linear-gradient(to right, $color-primary-dark , $color-dark-blue);
+}
+
+header {
+  padding: 2rem;
+}

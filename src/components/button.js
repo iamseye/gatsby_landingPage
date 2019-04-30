@@ -1,10 +1,11 @@
-import React from "react"
+import React from 'react';
 
-import { COLORS, GRADIENT } from "../styles/constants"
-import "../styles/button.scss"
+import { COLORS, GRADIENT } from '../styles/constants';
+import '../styles/button.scss';
 
 const Button = ({ children }) => (
   <button
+    type="button"
     style={{
       color: COLORS.lightWhite,
       background: GRADIENT,
@@ -12,6 +13,6 @@ const Button = ({ children }) => (
   >
     {children}
   </button>
-)
+);
 
-export default Button
+export default Button;

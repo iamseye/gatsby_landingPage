@@ -1,9 +1,32 @@
 @import "_variables.scss";
 
 .intro-section {
-    background-image: linear-gradient(to right, $color-primary-dark , $color-dark-blue);
+    background-image: linear-gradient(135deg, $color-primary-dark, $color-dark-blue , $color-primary);
+    height: 95vh;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+
+    h1 {
+      color: $color-light-white;
+    }
+}
+
+.intro-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4rem;
+
+  &--left {
+    margin-top: 3rem;
+    width: 50%;
+  }
+
+  img {
+    margin-right: 4rem;
+  }
 }
 
 header {
-  padding: 2rem;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
 }

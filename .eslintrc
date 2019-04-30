@@ -14,15 +14,10 @@
       "requireParamDescription": true,
       "requireReturnDescription": true
     }],
-    "require-jsdoc": ["error", {
-        "require": {
-            "FunctionDeclaration": true,
-            "MethodDefinition": true,
-            "ClassDeclaration": true
-        }
-    }],
     "react/jsx-filename-extension": [1, {
       "extensions": [".js", ".jsx"]
-    }]
+    }],
+    "react/destructuring-assignment": [<enabled>, 'never']
+
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import subscribeForm from './form';
+import Form from './form';
 import '../styles/feature.scss';
 import imageFeature from '../images/illustration-features.svg';
 
@@ -39,13 +39,13 @@ const Feature = () => (
       </div>
     </div>
 
-    <div>
+    <div className="feature-subscribe">
       <h2>Get Early Access Today</h2>
       <p>
         It only takes a minute to sign up and our free starter tier is extremely
         generous. If you have any questions, our support team would be happy to help you.
       </p>
-      <subscribeForm />
+      <Form />
     </div>
 
   </section>

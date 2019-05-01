@@ -1,44 +1,47 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Form, Field } from 'react-final-form';
 import Input from './input';
 
-class subscribeForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-    };
-  }
+const renderInput = ({ input, meta }) => (
+  <Input {...input} type="text" errorMessage={meta.touched && meta.error} />
+);
 
-  handleChange = (e) => {
-    this.setState({ email: e.target.value });
-  }
+const onSubmit = (values) => {
+  alert(JSON.stringify(values));
+};
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    alert($this.state.email);
+const required = (value) => {
+  if (!value || value === '') {
+    return 'This field is required';
   }
+  return undefined;
+};
 
-  isValid() {
-    if (this.state.email === '') {
-      return false;
-    }
-
-    return true;
+const emailCheck = (email) => {
+  if (!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
+    return 'Please enter the right email format';
   }
+  return undefined;
+};
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <Input
-          type="email"
-          name="email"
-          onChange={this.handleChange}
-          value={this.state.email}
-        />
-        <button disable={!this.isValid()} type="submit">Submit</button>
-      </form>
-    );
-  }
-}
+const composeValidators = (...validators) => value => validators.reduce((error, validator) => error || validator(value), undefined);
+
+const subscribeForm = () => (
+  <Form
+    onSubmit={onSubmit}
+    render={({ handleSubmit }) => (
+      <div>
+        <form onSubmit={handleSubmit}>
+          <Field
+            name="email"
+            component={renderInput}
+            validate={composeValidators(required, emailCheck)}
+          />
+          <button className="btn-green" type="submit">Submit</button>
+        </form>
+      </div>
+    )}
+  />
+);
 
 export default subscribeForm;

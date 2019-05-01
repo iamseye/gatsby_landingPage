@@ -36,3 +36,14 @@
     color: $color-gray;
   }
 }
+
+.feature-subscribe {
+  margin-top: 5rem;
+  p {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    color: $color-dark-blue;
+    font-weight: 600;
+  }
+}

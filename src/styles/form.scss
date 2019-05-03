@@ -1,7 +1,13 @@
-@import "_variables.scss";
+@import "_variables";
+@import "_mixins";
 
 .input-field {
-    width: 30%;
+  width: 30%;
+
+  @include respond(tab-land) {
+    width: 60%;
+  }
+
   input {
     transition: all 0.5s ease-in-out;
     padding: .5rem 2rem;
@@ -36,8 +42,19 @@
   justify-content: center;
   margin-top: 2rem;
 
+  @include respond(tab-land) {
+    flex-direction: column;
+    align-items: center;
+  }
+
   button {
     margin-left: 2rem;
     width: 10rem;
+
+    @include respond(tab-land) {
+      margin-top: 2rem;
+      margin-left: 0;
+      width: 60%;
+    }
   }
 }

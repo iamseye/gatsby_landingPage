@@ -6,7 +6,7 @@ import imageFeature from '../images/illustration-features.svg';
 function FeatureItem(props) {
   return (
     <div className="feature-item">
-      <h4>{props.title}</h4>
+      <h3>{props.title}</h3>
       <p>
         {props.text}
       </p>
@@ -16,7 +16,7 @@ function FeatureItem(props) {
 
 const Feature = () => (
   <section className="feature-section">
-    <h2>Stay Productive, Wherever You Are</h2>
+    <h1>Stay Productive, Wherever You Are</h1>
     <div className="feature-content">
       <img src={imageFeature} alt="features" />
       <div className="features">
@@ -40,7 +40,7 @@ const Feature = () => (
     </div>
 
     <div className="feature-subscribe">
-      <h2>Get Early Access Today</h2>
+      <h1>Get Early Access Today</h1>
       <p>
         It only takes a minute to sign up and our free starter tier is extremely
         generous. If you have any questions, our support team would be happy to help you.

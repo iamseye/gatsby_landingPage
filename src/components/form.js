@@ -1,9 +1,10 @@
 import React from 'react';
 import { Form, Field } from 'react-final-form';
 import Input from './input';
+import '../styles/form.scss';
 
-const renderInput = ({ input, meta }) => (
-  <Input {...input} type="text" errorMessage={meta.touched && meta.error} />
+const renderInput = ({ input, meta, ...rest }) => (
+  <Input {...input} {...rest} type="text" errorMessage={meta.touched && meta.error} />
 );
 
 const onSubmit = (values) => {
@@ -31,13 +32,15 @@ const subscribeForm = () => (
     onSubmit={onSubmit}
     render={({ handleSubmit }) => (
       <div>
-        <form onSubmit={handleSubmit}>
+        <form className="subscribeForm" onSubmit={handleSubmit}>
           <Field
             name="email"
+            placeholder="email@example.com"
             component={renderInput}
             validate={composeValidators(required, emailCheck)}
+            className="input-field"
           />
-          <button className="btn-green" type="submit">Submit</button>
+          <button className="btn-green" type="submit">Join</button>
         </form>
       </div>
     )}

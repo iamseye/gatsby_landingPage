@@ -2,16 +2,29 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Form from './form';
 import logo from '../images/logo.svg';
+import '../styles/footer.scss';
+import IconPhone from '../images/icons/icon-phone.svg';
+import IconEmail from '../images/icons/icon-email.svg';
 
 const Footer = ({ siteInfo }) => (
-  <footer>
-    <div>
-      <img src={logo} alt="Logo" />
-      <span>Phone: { siteInfo.companyPhone } </span>
-      <span>{ siteInfo.companyEmail }</span>
+  <footer className="footer">
+    <div className="footer-info">
+      <img src={logo} alt="Logo" style={{ width: '13rem' }} />
+      <div>
+        <IconPhone />
+        <span>
+          Phone: { siteInfo.companyPhone }
+        </span>
+      </div>
+      <div>
+        <IconEmail />
+        <span>
+          { siteInfo.companyEmail }
+        </span>
+      </div>
     </div>
 
-    <div>
+    <div className="footer-links">
       <div>
         <span> { siteInfo.companyName } </span>
         <ul>
@@ -62,11 +75,11 @@ const Footer = ({ siteInfo }) => (
       </div>
     </div>
 
-    <div>
+    <div className="footer-subscribe">
       <span>
         Receive updates from us, including tips and tricks on how to imporve your workflow.
       </span>
-      <Form />
+      <Form formClass="subscribeForm--footer" placeholder="" />
     </div>
   </footer>
 );

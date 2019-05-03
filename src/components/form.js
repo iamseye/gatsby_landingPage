@@ -28,18 +28,17 @@ const emailCheck = (email) => {
 
 const composeValidators = (...validators) => value => validators.reduce((error, validator) => error || validator(value), undefined);
 
-const subscribeForm = () => (
+const subscribeForm = props => (
   <Form
     onSubmit={onSubmit}
     render={({ handleSubmit }) => (
       <div>
-        <form className="subscribeForm" onSubmit={handleSubmit}>
+        <form className={props.formClass} onSubmit={handleSubmit}>
           <Field
             name="email"
-            placeholder="email@example.com"
+            placeholder={props.placeholder}
             component={renderInput}
             validate={composeValidators(required, emailCheck)}
-            className="input-field"
           />
           <button className="btn-green" type="submit">Join</button>
         </form>

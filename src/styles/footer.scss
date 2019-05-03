@@ -1,0 +1,76 @@
+@import './_variables';
+
+$section-padding: 3rem;
+
+footer.footer {
+  background-color: $color-primary-dark;
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+  margin-top: 5rem;
+  padding: 15rem 4rem 6rem 4rem;
+  color: $color-light-white;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.footer-info {
+  width: 35%;
+  padding-right: $section-padding;
+  border-right: solid 1px $color-light-white;
+
+  div {
+    margin-bottom: 1rem;
+  }
+
+  span {
+    margin-left: 1rem;
+  }
+}
+
+.footer-links {
+  display: flex;
+  padding-left: $section-padding;
+  border-right: solid 1px $color-light-white;
+
+  div {
+    width: 10rem;
+    padding: 0 .5rem;
+  }
+
+  span {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.3rem 0 0 0;
+  }
+
+  a:link, a:visited {
+    text-decoration: none;
+    color: $color-light-white;
+  }
+}
+
+.footer-subscribe {
+  padding-left: $section-padding;
+  float: right;
+
+  div {
+    margin-top: 2rem;
+  }
+
+  .input-field {
+    width: 100%;
+  }
+
+  .subscribeForm--footer {
+    button {
+      margin-top: 1rem;
+      float: right;
+      width: 50%;
+    }
+  }
+}

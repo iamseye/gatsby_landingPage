@@ -32,9 +32,17 @@ module.exports = {
       options: {
         fonts: [
           `Raleway\:700`,
-          `Open Sans\:400,600,700` // you can also specify font weights and styles
+          `Open Sans\:400,600,700`
         ]
-      }
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /icons/,
+        },
+      },
     },
   ],
 }

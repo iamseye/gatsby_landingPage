@@ -1,4 +1,5 @@
 @import '_variables';
+@import '_mixins';
 
 $section-padding: 3rem;
 
@@ -11,6 +12,11 @@ footer.footer {
   display: flex;
   justify-content: space-between;
   font-size: 16px;
+
+  @include respond(tab-land) {
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+    flex-direction: column;
+  }
 }
 
 .footer-info {
@@ -18,8 +24,20 @@ footer.footer {
   padding-right: $section-padding;
   border-right: solid 1px $color-light-white;
 
+  @include respond(tab-land) {
+    width: auto;
+    padding-right: 0;
+    border-right: none;
+    margin-bottom: 4rem;
+    order: 0;
+  }
+
   div {
     margin-bottom: 1rem;
+
+    @include respond(tab-land) {
+      margin-bottom: 2rem;
+    }
   }
 
   span {
@@ -32,20 +50,44 @@ footer.footer {
   padding-left: $section-padding;
   border-right: solid 1px $color-light-white;
 
+  @include respond(tab-land) {
+    order: 2;
+    margin-top: 5rem;
+    padding: 0 0;
+    flex-direction: column;
+    border-right: none;
+  }
+
   div {
     width: 10rem;
     padding: 0 .5rem;
+
+    @include respond(tab-land) {
+      margin: 2rem 0;
+      width: auto;
+    }
+
   }
 
   span {
     font-size: 1.2rem;
     font-weight: 700;
+
+    @include respond(tab-land) {
+      font-size: 2rem;
+    }
   }
 
   ul {
     list-style: none;
     padding: 0;
     margin: 1.3rem 0 0 0;
+
+    @include respond(tab-land) {
+      li {
+        margin: 1rem 0;
+      }
+    }
   }
 
   a:link, a:visited {
@@ -58,12 +100,22 @@ footer.footer {
   padding-left: $section-padding;
   float: right;
 
+  @include respond(tab-land) {
+    order: 1;
+    padding-left: 0;
+    text-align: center;
+  }
+
   div {
     margin-top: 2rem;
   }
 
   .input-field {
     width: 100%;
+
+    @include respond(tab-land) {
+      margin-top: 4rem;
+    }
   }
 
   .subscribeForm--footer {

@@ -16,6 +16,10 @@
     box-shadow: 0px 0px 5px -1px $color-gray;
     width: 100%;
 
+    @include respond(tab-land) {
+      padding: 1rem 1rem;
+    }
+
     &::placeholder {
       color: $color-light-gray;
     }
@@ -52,9 +56,10 @@
     width: 10rem;
 
     @include respond(tab-land) {
-      margin-top: 2rem;
+      margin-top: 1rem;
       margin-left: 0;
       width: 60%;
+      padding: 1rem 1rem;
     }
   }
 }

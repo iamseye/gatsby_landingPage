@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Field } from 'react-final-form';
 import Input from './input';
+import '../styles/button.scss';
 import '../styles/form.scss';
 
 const renderInput = ({ input, meta, ...rest }) => (

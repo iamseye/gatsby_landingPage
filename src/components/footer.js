@@ -1,48 +1,75 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react';
+import { Link } from 'gatsby';
+import Form from './form';
+import logo from '../images/logo.svg';
 
-import { COLORS } from "../styles/constants"
+const Footer = ({ siteInfo }) => (
+  <footer>
+    <div>
+      <img src={logo} alt="Logo" />
+      <span>Phone: { siteInfo.companyPhone } </span>
+      <span>{ siteInfo.companyEmail }</span>
+    </div>
 
-const Footer = ({ siteTitle }) => (
-  <footer
-    style={{
-      padding: "1rem",
-      backgroundColor: COLORS.lightGray,
-    }}
-  >
-    <div
-      style={{
-        display: "grid",
-        alignItems: "center",
-        justifyContent: "space-between",
-        gridTemplateColumns: "repeat(auto-fit, minmax(200px, 240px))",
-        padding: "1rem 2rem",
-        fontSize: ".85rem",
-      }}
-    >
-      <div style={{ color: COLORS.blue, fontWeight: 700 }}>
-        <a
-          style={{ textDecoration: "none" }}
-          href="https://github.com/gillkyle/gatsby-starter-landing-page"
-        >
-          Contact Us
-        </a>
+    <div>
+      <div>
+        <span> { siteInfo.companyName } </span>
+        <ul>
+          <li>
+            <Link to="/">Desktop App</Link>
+          </li>
+          <li>
+            <Link to="/">Mobile App</Link>
+          </li>
+          <li>
+            <Link to="/">Pricing</Link>
+          </li>
+          <li>
+            <Link to="/">Feature</Link>
+          </li>
+        </ul>
       </div>
-      <div style={{ color: COLORS.gray }}>
-        © {new Date().getFullYear()}
-        {` `}
-        {siteTitle}
+      <div>
+        <span> Company </span>
+        <ul>
+          <li>
+            <Link to="/">About Us</Link>
+          </li>
+          <li>
+            <Link to="/">Jobs</Link>
+          </li>
+          <li>
+            <Link to="/">Press</Link>
+          </li>
+          <li>
+            <Link to="/">Blog</Link>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <span> Support </span>
+        <ul>
+          <li>
+            <Link to="/">Contact Us</Link>
+          </li>
+          <li>
+            <Link to="/">Terms</Link>
+          </li>
+          <li>
+            <Link to="/">Privacy</Link>
+          </li>
+        </ul>
       </div>
     </div>
+
+    <div>
+      <span>
+        Receive updates from us, including tips and tricks on how to imporve your workflow.
+      </span>
+      <Form />
+    </div>
   </footer>
-)
+);
 
-Footer.propTypes = {
-  siteTitle: PropTypes.string,
-}
 
-Footer.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Footer
+export default Footer;

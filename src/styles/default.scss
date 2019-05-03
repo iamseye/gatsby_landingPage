@@ -1,7 +1,27 @@
+@import '_mixins.scss';
+
 html {
   font-family: 'Open Sans';
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  font-size: 100%; // 1rem = 10px; 10px/16px = 62.5%;
+
+  @include respond(tab-land) {
+      font-size: 56.25%; // 1rem = 9px
+  }
+
+  @include respond(tab-port) {
+      font-size: 50%; // 1rem = 8px
+  }
+
+  @include respond(big-desktop) {
+      font-size: 75%; // 1rem = 12px
+  }
+
+  @include respond(phone) {
+      font-size: 50%; // 1rem = 6px
+  }
+
 }
 body {
   margin: 0;
@@ -155,7 +175,6 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -439,9 +458,4 @@ p *:last-child {
 }
 li > p {
   margin-bottom: calc(1.45rem / 2);
-}
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 100%;
-  }
 }

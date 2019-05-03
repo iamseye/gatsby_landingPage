@@ -1,12 +1,23 @@
 @import "_variables.scss";
+@import "_mixins.scss";
 
 .intro-section {
     background-image: linear-gradient(135deg, $color-primary-dark, $color-dark-blue , $color-primary);
-    height: 95vh;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+    padding: 0 0 10rem 0;
+
+    @include respond(tab-land) {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+    }
 
     h1 {
       color: $color-light-white;
+
+      @include respond(tab-land) {
+        width: 60%;
+        margin: 1rem auto;
+      }
+
     }
 }
 
@@ -15,18 +26,36 @@
   justify-content: space-between;
   padding: 0 4rem;
 
+  @include respond(tab-land) {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0;
+  }
+
   &--left {
     margin-top: 3rem;
     width: 50%;
+
+    @include respond(tab-land) {
+      width: 100%;
+      order: 1;
+      text-align: center;
+    }
   }
 
   img {
     margin-right: 4rem;
+
+    @include respond(tab-land) {
+      order: 0;
+      width: 60%;
+      margin: 6rem 0 0 0;
+    }
   }
 }
 
 header {
-  padding: 2rem 4rem;
+  padding: 3rem 4rem;
   display: flex;
   justify-content: space-between;
 }

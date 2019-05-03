@@ -6,7 +6,7 @@ import '../styles/intro.scss';
 const Intro = () => (
   <section className="intro-section">
     <header>
-      <img src={logo} alt="Logo" />
+      <img src={logo} alt="Logo" style={{ width: '10rem' }}/>
       <div>
         <button type="button" className="btn-trans">Sign in</button>
         <button type="button" className="btn-green">Sign up</button>
@@ -15,9 +15,8 @@ const Intro = () => (
 
     <div className="intro-content">
       <div className="intro-content--left">
-        <h1 style={{ marginBottom: '1rem' }}> All Your Files In One Secure </h1>
-        <h1> Location, Accessible Anywhere.</h1>
-        <button style={{ marginTop: '1rem' }} type="button" className="btn-green--big">Get Started</button>
+        <h1 style={{ marginBottom: '1rem' }}> All Your Files In One Secure Location, Accessible Anywhere. </h1>
+        <button style={{ marginTop: '2rem' }} type="button" className="btn-green--big">Get Started</button>
       </div>
       <img src={imageIntro} alt="illustration hero" />
     </div>
